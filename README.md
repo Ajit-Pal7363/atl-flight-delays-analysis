@@ -6,11 +6,13 @@ likelihood of a delayed flight departure out of Hartsfield-Jackson Atlanta
 International Airport (ATL), the world's busiest airport, and compares that
 pattern to nationwide TSA passenger volume.
 
-Note on origin: the notebook started from a guided data-analysis exercise
-template (structured as "Activity Goals" prompts). The core walkthrough
-(cells computing delays and the day-of-week bar chart) follows that
-template; the passenger-volume comparison, the limitations section, and the
-code-quality fixes described below are original additions.
+Note on origin: this dataset and notebook template were provided as part of
+a Cisco Data Essentials course exercise (structured as "Activity Goals"
+prompts). I did not personally collect or extract the raw flight/passenger
+data -- I worked with the files as supplied by the course and wrote the
+pandas analysis code. The passenger-volume comparison, the limitations
+section, and the code-quality fixes described below are my own additions
+on top of the course template.
 
 Files
 -----
@@ -28,15 +30,21 @@ Files
 
 Data Sources
 ------------
-Flight data was extracted using the `anyflights` R package
-(https://github.com/simonpcouch/anyflights), similar in spirit to
-`nycflights13` (https://github.com/tidyverse/nycflights13). We selected
-ATL and year 2023, which contains 336,434 total flights; the CSV here is a
-random sample of 5,000 of those flights.
+Flight data (atlanta-airport-flights-2023.csv) and passenger data
+(us-daily-passengers.csv) were provided as course material for a Cisco
+Data Essentials exercise; I did not collect or extract this data myself.
 
-Passenger data comes from the Transportation Security Administration (TSA),
-which publishes the daily number of people passing through TSA checkpoints:
-https://www.tsa.gov/travel/passenger-volumes/2023
+According to the documentation that came bundled with the course dataset,
+the flight data was originally generated using the `anyflights` R package
+(https://github.com/simonpcouch/anyflights), a tool similar in spirit to
+the well-known teaching dataset `nycflights13`
+(https://github.com/tidyverse/nycflights13), by selecting ATL and year
+2023 (336,434 total flights) and taking a random sample of 5,000. The
+passenger data is attributed to the Transportation Security
+Administration (TSA), which publishes daily checkpoint passenger counts:
+https://www.tsa.gov/travel/passenger-volumes/2023. I have not independently
+verified these upstream sources beyond what the course documentation
+states.
 
 Key Findings
 ------------
